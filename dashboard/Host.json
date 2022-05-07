@@ -1,0 +1,231 @@
+[
+  {
+    "name": "[OPS] HOST - 主机监控大盘",
+    "tags": "Type=Host busigroup=ops",
+    "configs": "{\"var\":[{\"name\":\"ident\",\"definition\":\"label_values(system_load1{busigroup=\\\"ops\\\"},ident)\",\"options\":[\"host03.51vv.com\",\"vvyw-z3-72xvnc.114.112.41.130\",\"vvyw-z2-cmdb.101.251.209.250\",\"vvyw-z1-24xvnc.192.168.1.55\",\"vvyw-z2-falcon-hbs.140.210.73.86\",\"vvyw-z3-24xvnc.114.112.77.193\",\"zw3-ovirt-node2.51vv.com\",\"vvyw-yz-k8s-master.114.112.78.155\",\"vvyw-z2-falcon.101.251.209.155\",\"vvyw-z3-24xvnc.114.112.41.135\",\"vvml-tx-k8s-node.172.22.3.120\",\"vvyw-z2-falcon-graph.140.210.73.117\",\"vvyw-z2-24xvnc.210.73.211.131\",\"vvyw-z2-32Xvnc.101.251.209.147\",\"vvyw-z2-jumpserver-koko.106.3.132.166\",\"vvyw-z2-falcon-transfer.140.210.73.85\",\"vvyw-yz-k8s-harbor.114.112.78.154\",\"vvyw-z3-jumpserver.114.112.40.209\",\"ovirt.51vv.com\",\"vvxx-yz-k8s-harbor.172.18.2.177\",\"vvyw-z2-72xvnc.106.3.132.129\",\"vvxx-yz-k8s-node.172.18.2.179\",\"vvxx-yz-k8s-master.172.18.2.181\",\"vvxx-yz-k8s-master.172.18.2.183\",\"zw3-ovirt-node1.51vv.com\",\"vvyw-z2-72Xvnc-100W.106.3.132.189\",\"vvyw-z3-72Xvnc.114.112.41.143\",\"ovirt-engine.51vv.com\",\"vvyw-z2-falcon-transfer.140.210.73.121\",\"zw2-ovirt-node1.51vv.com\",\"vvyw-z3-24Xvnc-error.114.112.43.79\",\"vvyw-z2-32Xvnc.101.251.209.145\",\"vvyw-yz-k8s-node.114.112.36.106\",\"vvyw-z2-cmdb-bkdata.172.18.9.238\",\"vvyw-z2-24Xvnc.101.251.209.137\",\"host02.51vv.com\",\"vvyw-yz-k8s-node.114.112.78.161\",\"vvyw-yz-k8s-node.114.112.36.102\",\"vvyw-yz-k8s-node.114.112.78.157\",\"vvyw-z2-cmdb-paas.172.18.9.217\",\"zw2-ovirt-node2.51vv.com\",\"vvyw-yz-k8s-node.114.112.36.119\",\"vvyw-yz-k8s-node.114.112.78.160\",\"vvyw-z1-24Xvnc.210.73.209.101\",\"vvyw-z2-falcon-graph.140.210.73.118\",\"vvyw-z2-falcon-graph.140.210.73.119\",\"vvyw-z2-72Xvnc-ops.140.210.73.35\",\"vvyw-z2-24xvnc.210.73.211.133\",\"vvyw-z2-72Xvnc.192.168.2.12\",\"vvml-tx-k8s-node.172.22.3.26\",\"vvyw-yz-k8s-master.114.112.78.156\",\"vvyw-z3-jumpserver.114.112.40.208\",\"vvyw-z2-falcon-transfer.172.18.9.187\",\"vvyw-z2-falcon-graph.140.210.73.120\",\"vvyw-z2-24xvnc.101.251.209.191\",\"vvyw-z1-24xvnc.192.168.1.54\",\"vvyw-z2-cmdb-cmdb.106.3.132.218\",\"vvyw-z2-24xvnc.210.73.211.130\",\"vvxx-yz-k8s-master.172.18.2.182\",\"vvyw-z2-24xvnc.210.73.211.132\",\"vvyw-z3-24xvnc.114.112.77.194\",\"vvyw-z2-72Xvnc.192.168.2.11\",\"vvxx-yz-k8s-node.172.18.2.178\",\"vvyw-z2-Xvnc-NFS.140.210.73.3\",\"vvyw-z2-72Xvnc-AUTO.140.210.73.34\",\"zw2-ovirt-node3.51vv.com\",\"vvyw-z2-72Xvnc-100W.106.3.132.190\",\"vvyw-z2-cmdb-rbtnode1.172.18.9.219\",\"vvyw-z2-cmdb-bknetwork.172.18.9.239\",\"vvyw-z2-24xvnc.101.251.209.192\",\"vvyw-z2-24xvnc.101.251.209.193\",\"vvyw-z3-24Xvnc.114.112.43.101\",\"vvyw-yz-k8s-node.114.112.36.122\",\"vvyw-yz-k8s-node.114.112.36.126\",\"vvyw-z2-cmdb-saas.172.18.9.237\",\"vvyw-z2-72Xvnc.140.210.73.8\",\"vvyw-z2-72Xvnc.106.3.132.130\",\"vvyw-z2-72Xvnc-100W.106.3.132.188\",\"vvyw-z3-72Xvnc.114.112.41.175\",\"vvyw-z2-32Xvnc.101.251.209.146\"],\"multi\":true}],\"links\":[{\"title\":\"n9e\",\"url\":\"https://n9e.gitee.io/\",\"targetBlank\":true},{\"title\":\"author\",\"url\":\"http://flashcat.cloud/\",\"targetBlank\":true}]}",
+    "chart_groups": [
+      {
+        "name": "单机概况",
+        "weight": 1,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"100-cpu_usage_idle{ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"legend\":\"\"}],\"name\":\"CPU使用率\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{\"value\":30}},\"options\":{\"valueMappings\":[{\"type\":\"range\",\"match\":{\"from\":0,\"to\":80},\"result\":{\"color\":\"#129b22\"}},{\"type\":\"range\",\"match\":{\"from\":80,\"to\":90},\"result\":{\"color\":\"#f8e71c\"}},{\"type\":\"range\",\"match\":{\"from\":90,\"to\":100},\"result\":{\"color\":\"#f20824\"}}],\"standardOptions\":{\"util\":\"percent\",\"decimals\":1}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":5,\"x\":15,\"y\":0,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"mem_used_percent{ident=~\\\"$ident\\\"}\",\"legend\":\"\"}],\"name\":\"内存使用率\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{\"value\":30}},\"options\":{\"valueMappings\":[{\"type\":\"range\",\"match\":{\"from\":0,\"to\":80},\"result\":{\"color\":\"#129b22\"}},{\"type\":\"range\",\"match\":{\"from\":80,\"to\":90},\"result\":{\"color\":\"#f8e71c\"}},{\"type\":\"range\",\"match\":{\"special\":80,\"from\":90,\"to\":100},\"result\":{\"color\":\"#fc0f0f\"}}],\"standardOptions\":{\"util\":\"percent\",\"decimals\":1}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":5,\"x\":15,\"y\":1,\"i\":\"1\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"system_uptime{ident=~\\\"$ident\\\"}\"}],\"name\":\"启动时长\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{\"value\":30}},\"options\":{\"valueMappings\":[],\"standardOptions\":{\"util\":\"humantimeSeconds\",\"decimals\":1}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":5,\"x\":5,\"y\":0,\"i\":\"2\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"disk_used_percent{ident=~\\\"$ident\\\",path!=\\\"/boot\\\"}\",\"legend\":\"{{path}}\"}],\"name\":\"磁盘使用率\",\"custom\":{\"showHeader\":false,\"calc\":\"lastNotNull\",\"displayMode\":\"seriesToRows\"},\"options\":{\"valueMappings\":[{\"type\":\"range\",\"match\":{\"from\":0,\"to\":80},\"result\":{\"color\":\"#7ed321\"}},{\"type\":\"range\",\"match\":{\"from\":80,\"to\":90},\"result\":{\"color\":\"#f8e71c\"}},{\"type\":\"range\",\"match\":{\"from\":90,\"to\":100},\"result\":{\"color\":\"#f81010\"}}],\"standardOptions\":{\"util\":\"percent\",\"min\":0,\"max\":100,\"decimals\":1}},\"overrides\":[{\"properties\":{\"valueMappings\":[]},\"matcher\":{}}],\"version\":\"2.0.0\",\"type\":\"table\",\"layout\":{\"h\":1,\"w\":5,\"x\":0,\"y\":1,\"i\":\"3\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"disk_inodes_used{ident=~\\\"$ident\\\",path!=\\\"/boot\\\"}/disk_inodes_total{ident=~\\\"$ident\\\",path!=\\\"/boot\\\"}\",\"legend\":\"{{path}}\"}],\"name\":\"inode使用率\",\"custom\":{\"showHeader\":false,\"calc\":\"lastNotNull\",\"displayMode\":\"seriesToRows\"},\"options\":{\"valueMappings\":[{\"type\":\"range\",\"match\":{\"from\":0,\"to\":80},\"result\":{\"color\":\"#7ed321\"}},{\"type\":\"range\",\"match\":{\"special\":80,\"from\":80,\"to\":90},\"result\":{\"text\":\"\",\"color\":\"#f8e71c\"}},{\"type\":\"range\",\"match\":{\"from\":90,\"to\":100},\"result\":{\"color\":\"#f30a0a\"}}],\"standardOptions\":{\"util\":\"percent\",\"decimals\":1}},\"overrides\":[{}],\"version\":\"2.0.0\",\"type\":\"table\",\"layout\":{\"h\":1,\"w\":5,\"x\":5,\"y\":1,\"i\":\"4\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"linux_sysctl_fs_file_nr{ident=~\\\"$ident\\\"}/linux_sysctl_fs_file_max{ident=~\\\"$ident\\\"}*100\"}],\"name\":\"FD使用率\",\"description\":\"# /proc/sys/fs/file-max\\n这个文件决定了系统级别所有进程可以打开的文件描述符的数量限制，如果内核中遇到VFS: file-max limit <number> reached的信息，那么就提高这个值。\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{\"value\":25}},\"options\":{\"valueMappings\":[{\"type\":\"range\",\"match\":{\"from\":0,\"to\":80},\"result\":{\"color\":\"#129b22\"}},{\"type\":\"range\",\"match\":{\"from\":80,\"to\":90},\"result\":{\"color\":\"#f8e71c\"}},{\"type\":\"range\",\"match\":{\"from\":90,\"to\":100},\"result\":{\"color\":\"#f60707\"}}],\"standardOptions\":{\"util\":\"percent\",\"decimals\":2}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":4,\"x\":20,\"y\":0,\"i\":\"5\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"system_n_cpus{ident=~\\\"$ident\\\"}\"}],\"name\":\"CPU核心数\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{\"value\":30}},\"options\":{\"standardOptions\":{}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":5,\"x\":10,\"y\":0,\"i\":\"6\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"system_load5{ident=~\\\"$ident\\\"} / system_n_cpus\",\"legend\":\"\"}],\"name\":\"CPU 5min平均负载\",\"description\":\"load.5min / cpu_cores\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{}},\"options\":{\"standardOptions\":{\"util\":\"none\",\"min\":0,\"max\":null}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":5,\"x\":10,\"y\":1,\"i\":\"7\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"swap_used_percent{ident=~\\\"$ident\\\"}\"}],\"name\":\"Swap分区使用率\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"value\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{}},\"options\":{\"standardOptions\":{\"util\":\"percent\"}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":4,\"x\":20,\"y\":1,\"i\":\"8\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"target_up{ident=~\\\"$ident\\\"}\"}],\"name\":\"主机状态\",\"custom\":{\"textMode\":\"value\",\"colorMode\":\"background\",\"calc\":\"lastNotNull\",\"colSpan\":1,\"textSize\":{\"value\":30}},\"options\":{\"valueMappings\":[{\"type\":\"special\",\"match\":{\"special\":1},\"result\":{\"text\":\"UP\",\"color\":\"#7ed321\"}},{\"type\":\"special\",\"match\":{\"special\":0},\"result\":{\"text\":\"Down\",\"color\":\"#f50c0c\"}}],\"standardOptions\":{}},\"version\":\"2.0.0\",\"type\":\"stat\",\"layout\":{\"h\":1,\"w\":5,\"x\":0,\"y\":0,\"i\":\"9\"}}",
+            "weight": 0
+          }
+        ]
+      },
+      {
+        "name": "系统指标",
+        "weight": 2,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(kernel_context_switches{ident=~\\\"$ident\\\"}[1m])\",\"legend\":\"{{ipaddr}}_context_switches\"},{\"expr\":\"rate(kernel_interrupts{ident=\\\"$ident\\\"}[1m])\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_kernel_interrupts\"}],\"name\":\"上下文切换/中断\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":0,\"y\":0,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"kernel_entropy_avail{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_entropy_avail\"}],\"name\":\"熵池大小\",\"links\":[],\"description\":\"# linux熵池\\nLinux内核采用熵来描述数据的随机性。熵（entropy）是描述系统混乱无序程度的物理量，一个系统的熵越大则说明该系统的有序性越差，即不确定性越大。在信息学中，熵被用来表征一个符号或系统的不确定性，熵越大，表明系统所含有用信息量越少，不确定度越大。\\n\\n计算机本身是可预测的系统，因此，用计算机算法不可能产生真正的随机数。但是机器的环境中充满了各种各样的噪声，如硬件设备发生中断的时间，用户点击鼠标的时间间隔等是完全随机的，事先无法预测。Linux内核实现的随机数产生器正是利用系统中的这些随机噪声来产生高质量随机数序列。\\n\\nLinux 内核维护了一个熵池用来收集来自设备驱动程序和其它来源的环境噪音。理论上，熵池中的数据是完全随机的，可以实现产生真随机数序列。为跟踪熵池中数据的随机性，内核在将数据加入池的时候将估算数据的随机性，这个过程称作熵估算。熵估算值描述池中包含的随机数位数，其值越大表示池中数据的随机性越好。\\n\\n需要注意的是，产生真随机数依赖于熵池中的噪声资源。如果熵池资源耗尽，就需要等到收集足够多的环境噪声时，才能继续产生新的随机数。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{\"steps\":[{\"value\":100,\"color\":\"#f50505\"}]}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":12,\"y\":0,\"i\":\"1\"}}",
+            "weight": 0
+          }
+        ]
+      },
+      {
+        "name": "进程详情",
+        "weight": 3,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_total{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_total\"}],\"name\":\"processes_total\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\"},\"thresholds\":{\"steps\":[{\"value\":2000,\"color\":\"#f40202\"}]}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":0,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_running{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_running\"}],\"name\":\"processes_running\",\"description\":\"R 是 Running 或 Runnable 的缩写，表示进程在 CPU 的就绪队列中，正在运行或者正在等待运行。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\"},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":0,\"i\":\"1\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_idle{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_idle\"}],\"name\":\"processes_idle\",\"description\":\"I 是 Idle 的缩写，也就是空闲状态，用在不可中断睡眠的内核线程上。前面说了，硬件交互导致的不可中断进程用 D 表示，但对某些内核线程来说，它们有可能实际上并没有任何负载，用 Idle 正是为了区分这种情况。要注意，D 状态的进程会导致平均负载升高， I 状态的进程却不会。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\",\"min\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":0,\"i\":\"2\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_sleeping{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_sleeping\"}],\"name\":\"processes_sleeping\",\"description\":\"S 是 Interruptible Sleep 的缩写，也就是可中断状态睡眠，表示进程因为等待某个事件而被系统挂起。当进程等待的事件发生时，它会被唤醒并进入 R 状态。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\"},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":2,\"i\":\"3\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_zombies{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_zombies\"}],\"name\":\"processes_zombies\",\"description\":\"Z 是 Zombie 的缩写，它表示僵尸进程，也就是进程实际上已经结束了，但是父进程还没有回收它的资源（比如进程的描述符、PID 等）。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\",\"min\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":4,\"i\":\"4\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_blocked{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_blocked\"}],\"name\":\"processes_blocked\",\"description\":\"D 是 Disk Sleep 的缩写，也就是不可中断状态睡眠（Uninterruptible Sleep），一般表示进程正在跟硬件交互，并且交互过程不允许被其他进程或中断打断。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\",\"min\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":2,\"i\":\"5\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_dead{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_dead\"}],\"name\":\"processes_dead\",\"description\":\"回收中的进程数\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\",\"min\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":2,\"i\":\"6\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_total_threads{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_total_threads\"}],\"name\":\"processes_total_threads\",\"description\":\"总线程数\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\",\"min\":null},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":4,\"i\":\"7\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"processes_unknown{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_processes_unknown\"}],\"name\":\"processes_unknown\",\"description\":\"未知状态进程数\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\"},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":4,\"i\":\"8\"}}",
+            "weight": 0
+          }
+        ]
+      },
+      {
+        "name": "CPU",
+        "weight": 4,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"expr\":\"cpu_usage_irq{ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"refId\":\"E\",\"legend\":\"{{ipaddr}}_cpu_usage_irq\"},{\"expr\":\"cpu_usage_softirq{busitype=~\\\"$busitype\\\",ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"refId\":\"F\",\"legend\":\"{{ipaddr}}_cpu_usage_softirq\"},{\"expr\":\"cpu_usage_nice{busitype=~\\\"$busitype\\\",ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"refId\":\"G\",\"legend\":\"{{ipaddr}}_cpu_usage_nice\"}],\"name\":\"CPU.Irq/Softirq/Nice\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"desc\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\",\"min\":null},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":2,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"cpu_usage_idle{ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"legend\":\"{{ipaddr}}_cpu_usage_idle\"}],\"name\":\"CPU.Idle\",\"links\":[],\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\",\"min\":null,\"max\":100},\"thresholds\":{\"steps\":[{\"value\":10,\"color\":\"#f20202\"}]}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":0,\"i\":\"1\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"system_load15{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_system_load15\"},{\"expr\":\"system_load1{ident=~\\\"$ident\\\"}\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_system_load1\"},{\"expr\":\"system_load5{ident=~\\\"$ident\\\"}\",\"refId\":\"C\",\"legend\":\"{{ipaddr}}_system_load5\"}],\"name\":\"CPU负载 Load 1min 5min 15min\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"min\":null},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":2,\"i\":\"2\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"cpu_usage_iowait{ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"legend\":\"{{ipaddr}}_cpu_usage_iowait\"}],\"name\":\"CPU.IOWait\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\",\"min\":null,\"max\":null},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":0,\"i\":\"3\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"cpu_usage_steal{ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"legend\":\"{{ipaddr}}_cpu_usage_steal\"}],\"name\":\"CPU.Steal\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\",\"min\":null,\"max\":null,\"decimals\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":0,\"i\":\"4\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"cpu_usage_user{ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"legend\":\"{{ipaddr}}_cpu_usage_user\"},{\"expr\":\"cpu_usage_system{busitype=~\\\"$busitype\\\",ident=~\\\"$ident\\\",cpu=\\\"cpu-total\\\"}\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_cpu_usage_system\"}],\"name\":\"CPU.User/System\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\",\"min\":null},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":2,\"i\":\"5\"}}",
+            "weight": 0
+          }
+        ]
+      },
+      {
+        "name": "内存详情",
+        "weight": 5,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"mem_active{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_mem_active\"},{\"expr\":\"mem_cached{ident=~\\\"$ident\\\"}\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_mem_cached\"},{\"expr\":\"mem_buffered{ident=~\\\"$ident\\\"}\",\"refId\":\"C\",\"legend\":\"{{ipaddr}}_mem_buffered\"},{\"expr\":\"mem_inactive{ident=~\\\"$ident\\\"}\",\"refId\":\"D\",\"legend\":\"{{ipaddr}}_mem_inactive\"},{\"expr\":\"mem_mapped{ident=~\\\"$ident\\\"}\",\"refId\":\"E\",\"legend\":\"{{ipaddr}}_mem_mapped\"},{\"expr\":\"mem_shared{ident=~\\\"$ident\\\"}\",\"refId\":\"F\",\"legend\":\"{{ipaddr}}_mem_shared\"},{\"expr\":\"mem_swap_cached{ident=~\\\"$ident\\\"}\",\"refId\":\"G\",\"legend\":\"{{ipaddr}}_mem_swap_cached\"}],\"name\":\"用户态内存使用\",\"description\":\"内存指标可参考链接 [/PROC/MEMINFO之谜](http://linuxperf.com/?p=142) \",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":0,\"y\":2,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"mem_slab{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_mem_slab\"},{\"expr\":\"mem_sreclaimable{ident=~\\\"$ident\\\"}\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_mem_slab\"},{\"expr\":\"mem_sunreclaim{ident=~\\\"$ident\\\"}\",\"refId\":\"C\",\"legend\":\"{{ipaddr}}_mem_slab\"},{\"expr\":\"mem_vmalloc_used{ident=~\\\"$ident\\\"}\",\"refId\":\"D\",\"legend\":\"{{ipaddr}}_mem_slab\"},{\"expr\":\"mem_vmalloc_chunk{ident=~\\\"$ident\\\"}\",\"refId\":\"E\",\"legend\":\"{{ipaddr}}_mem_slab\"}],\"name\":\"内核态内存使用\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":12,\"y\":2,\"i\":\"1\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"mem_used_percent{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_mem_used_percent\"}],\"name\":\"内存使用率\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\",\"min\":null},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":0,\"y\":0,\"i\":\"2\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"swap_used_percent{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_swap_used_percent\"}],\"name\":\"Swap分区使用率\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\"},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":12,\"y\":0,\"i\":\"3\"}}",
+            "weight": 0
+          }
+        ]
+      },
+      {
+        "name": "磁盘详情",
+        "weight": 6,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"expr\":\"disk_total{ident=~\\\"$ident\\\",path!=\\\"/boot\\\"}\",\"refId\":\"B\",\"legend\":\"{{path}}\"}],\"name\":\"磁盘空间大小\",\"custom\":{\"showHeader\":true,\"calc\":\"lastNotNull\",\"displayMode\":\"seriesToRows\"},\"options\":{\"standardOptions\":{\"util\":\"bytesIEC\",\"decimals\":null}},\"overrides\":[{}],\"version\":\"2.0.0\",\"type\":\"table\",\"layout\":{\"h\":2,\"w\":6,\"x\":12,\"y\":0,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(diskio_reads{ident=~\\\"$ident\\\"}[1m])\",\"legend\":\"{{ipaddr}}_{{name}}-read\"},{\"expr\":\"rate(diskio_writes{ident=~\\\"$ident\\\"}[1m])\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_{{name}}-writes\"}],\"name\":\"IOPS\",\"description\":\"随机读写频繁的应用，如小文件存储(图片)、OLTP数据库、邮件服务器，关注随机读写性能，IOPS是关键衡量指标。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":0,\"y\":2,\"i\":\"1\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(diskio_write_time{ident=~\\\"$ident\\\"}[1m])/rate(diskio_writes{ident=~\\\"$ident\\\"}[1m])+rate(diskio_read_time{ident=~\\\"$ident\\\"}[1m])/rate(diskio_reads{ident=~\\\"$ident\\\"}[1m])\",\"legend\":\"{{ipaddr}}_{{name}}\"}],\"name\":\"disk.io.await\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":12,\"y\":4,\"i\":\"2\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(diskio_read_bytes{ident=~\\\"$ident\\\"}[1m])\",\"legend\":\"{{ipaddr}}_{{name}}-read\"},{\"expr\":\"rate(diskio_write_bytes{ident=~\\\"$ident\\\"}[1m])\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_{{name}}-writes\"}],\"name\":\"IO吞吐量\",\"description\":\"顺序读写频繁的应用，传输大量连续数据，如电视台的视频编辑，视频点播VOD(Video On Demand)，关注连续读写性能。数据吞吐量是关键衡量指标。\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"desc\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"bytesIEC\",\"decimals\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":12,\"y\":2,\"i\":\"3\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"disk_used_percent{ident=~\\\"$ident\\\",path!=\\\"/boot\\\"}\",\"legend\":\"{{ipaddr}}_{{path}}\"}],\"name\":\"磁盘使用率\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"percent\"},\"thresholds\":{\"steps\":[{\"value\":90,\"color\":\"#fc0000\"}]}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":0,\"y\":0,\"i\":\"4\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"disk_free{ident=~\\\"$ident\\\",path!=\\\"/boot\\\"}\",\"legend\":\"{{path}}\"}],\"name\":\"磁盘剩余空间大小\",\"custom\":{\"showHeader\":true,\"calc\":\"lastNotNull\",\"displayMode\":\"seriesToRows\"},\"options\":{\"valueMappings\":[{\"type\":\"range\",\"match\":{\"special\":0,\"from\":0,\"to\":10240000000},\"result\":{\"text\":\"\",\"color\":\"#fa0202\"}},{\"type\":\"range\",\"match\":{\"special\":10240000000,\"from\":10240000000},\"result\":{\"color\":\"#7ed321\"}}],\"standardOptions\":{\"util\":\"bytesIEC\"}},\"overrides\":[{}],\"version\":\"2.0.0\",\"type\":\"table\",\"layout\":{\"h\":2,\"w\":6,\"x\":18,\"y\":0,\"i\":\"5\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(diskio_io_time{ident=~\\\"$ident\\\"}[1m])/10\",\"legend\":\"{{ipaddr}}_{{name}}\"}],\"name\":\"disk.io.util\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"min\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":12,\"x\":0,\"y\":4,\"i\":\"6\"}}",
+            "weight": 0
+          }
+        ]
+      },
+      {
+        "name": "网络详情",
+        "weight": 7,
+        "charts": [
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(net_bytes_recv{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])*8\",\"legend\":\"{{ipaddr}}_{{interface}}-recv\"},{\"expr\":\"rate(net_bytes_sent{busitype=~\\\"$busitype\\\",ident=~\\\"$ident\\\",interface=~\\\"eth.*\\\"}[1m])*8\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_{{interface}}-sent\"}],\"name\":\"网络流量\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"desc\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"bytesIEC\",\"decimals\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":24,\"x\":0,\"y\":0,\"i\":\"0\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(net_packets_recv{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])\",\"legend\":\"{{ipaddr}}_{{interface}}-recv\"},{\"expr\":\"rate(net_packets_sent{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_{{interface}}-sent\"}],\"name\":\"packets\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"desc\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"decimals\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":2,\"i\":\"1\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(net_err_in{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])\",\"legend\":\"{{ipaddr}}_{{interface}}-in\"},{\"expr\":\"rate(net_err_out{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_{{interface}}-out\"}],\"name\":\"error\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"desc\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"decimals\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":2,\"i\":\"2\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"rate(net_drop_in{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])\",\"legend\":\"{{ipaddr}}_{{interface}}-in\"},{\"expr\":\"rate(net_drop_out{ident=~\\\"$ident\\\",interface=~\\\"eth.*|em.*|bond.*\\\"}[1m])\",\"refId\":\"B\",\"legend\":\"{{ipaddr}}_{{interface}}-out\"}],\"name\":\"drop\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"desc\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"decimals\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":2,\"i\":\"3\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"expr\":\"netstat_tcp_time_wait{ident=~\\\"$ident\\\"}\",\"refId\":\"C\",\"legend\":\"{{ipaddr}}_netstat_tcp_time_wait\"}],\"name\":\"netstat_tcp_time_wait\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":16,\"y\":4,\"i\":\"4\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"netstat_tcp_established{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_netstat_tcp_established\"}],\"name\":\"netstat_tcp_established\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{\"util\":\"none\",\"min\":0},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":0,\"y\":4,\"i\":\"5\"}}",
+            "weight": 0
+          },
+          {
+            "configs": "{\"targets\":[{\"refId\":\"A\",\"expr\":\"netstat_tcp_listen{ident=~\\\"$ident\\\"}\",\"legend\":\"{{ipaddr}}_netstat_tcp_listen\"}],\"name\":\"netstat_tcp_listen\",\"options\":{\"tooltip\":{\"mode\":\"all\",\"sort\":\"none\"},\"legend\":{\"displayMode\":\"hidden\"},\"standardOptions\":{},\"thresholds\":{}},\"custom\":{\"drawStyle\":\"lines\",\"lineInterpolation\":\"smooth\",\"fillOpacity\":0.5,\"stack\":\"off\"},\"version\":\"2.0.0\",\"type\":\"timeseries\",\"layout\":{\"h\":2,\"w\":8,\"x\":8,\"y\":4,\"i\":\"6\"}}",
+            "weight": 0
+          }
+        ]
+      }
+    ]
+  }
+]
